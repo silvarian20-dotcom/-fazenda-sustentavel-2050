@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚜 Fazenda Sustentável 2050</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="acessibilidade-fixa">
+        <button id="zoomMais" title="Aumentar Fonte">A+</button>
+        <button id="zoomMenos" title="Diminuir Fonte">A-</button>
+        <button id="altoContraste" title="Alto Contraste">🎨</button>
+        <button id="modoEscuro" title="Modo Escuro">🌙</button>
+        <button id="btnMusica" title="Música de Fundo">🎵</button>
+    </div>
+
+    <section id="menu" class="tela ativa">
+        <h1><span class="trator-animado">🚜</span> Fazenda Sustentável 2050</h1>
+        <p>Construa uma fazenda produtiva sem destruir o meio ambiente.</p>
+        <div class="botoes-menu">
+            <button id="btnJogar">Jogar</button>
+            <button id="btnAprender">O que a Fazenda Precisa</button>
+            <button id="btnTutorial">Como Funciona</button>
+        </div>
+    </section>
+
+    <section id="tutorial" class="tela">
+        <h2>📖 Como Funciona</h2>
+        <p>Você é o gestor de uma fazenda sustentável no ano de 2050.</p>
+        <p>Seu objetivo é produzir alimentos, gerar renda e preservar o meio ambiente.</p>
+        <p>Durante 10 anos você enfrentará desafios reais do campo.</p>
+        <ul>
+            <li>🌾 Produção Agrícola</li>
+            <li>💰 Economia da Fazenda</li>
+            <li>🌳 Meio Ambiente</li>
+            <li>😊 Qualidade de Vida</li>
+        </ul>
+        <p>Cada decisão afeta os indicadores. Se algum deles chegar a zero, a fazenda entra em colapso.</p>
+        <button id="voltarMenu">Voltar ao Menu</button>
+    </section>
+
+    <section id="aprendizado" class="tela">
+        <h2>🐝 O que uma Fazenda Sustentável Precisa?</h2>
+        <p style="margin-bottom: 25px;">Para cumprir as metas ecológicas, uma propriedade moderna precisa equilibrar produção e preservação:</p>
+        
+        <div class="bloco-conteudo">
+            <h3>🐝 1. Proteção das Abelhas</h3>
+            <p>Os polinizadores são responsáveis por grande parte da nossa produção de alimentos. Evitar defensivos químicos pesados protege essas espécies fundamentais.</p>
+        </div>
+
+        <div class="bloco-conteudo">
+            <h3>💧 2. Manejo da Água e Solo</h3>
+            <p>Preservar as matas ciliares ao redor de rios protege as nascentes contra a seca intensa e mantém o solo úmido e fértil.</p>
+        </div>
+
+        <div class="bloco-conteudo">
+            <h3>☀️ 3. Energia Limpa</h3>
+            <p>Substituir matrizes elétricas poluentes por captação solar reduz radicalmente a pegada de carbono e gera grande economia a longo prazo.</p>
+        </div>
+
+        <button id="btnVoltarMenu">Voltar ao Menu</button>
+    </section>
+
+    <section id="jogo" class="tela">
+        <header>
+            <h2>Ano <span id="ano">1</span> / 10</h2>
+        </header>
+
+        <section class="painel">
+            <div class="indicador">
+                <p>🌾 Produção</p>
+                <progress id="barraProducao" value="50" max="100"></progress>
+                <span id="valorProducao">50</span>
+            </div>
+            <div class="indicador">
+                <p>💰 Economia</p>
+                <progress id="barraEconomia" value="50" max="100"></progress>
+                <span id="valorEconomia">50</span>
+            </div>
+            <div class="indicador">
+                <p>🌳 Meio Ambiente</p>
+                <progress id="barraAmbiente" value="50" max="100"></progress>
+                <span id="valorAmbiente">50</span>
+            </div>
+            <div class="indicador">
+                <p>😊 Qualidade de Vida</p>
+                <progress id="barraQualidade" value="50" max="100"></progress>
+                <span id="valorQualidade">50</span>
+            </div>
+        </section>
+
+        <section class="fazenda">
+            <div id="lavoura" class="area">🌱 Produção Inicial</div>
+            <div id="rio" class="area">💧 Rio Saudável</div>
+            <div id="floresta" class="area">🌳 Floresta Preservada</div>
+            <div id="energia" class="area">⚡ Energia Convencional</div>
+        </section>
+
+        <section class="evento">
+            <h3 id="tituloEvento">Evento</h3>
+            <p id="descricaoEvento">Descrição do evento.</p>
+            <div class="opcoes">
+                <button id="opcao1">Opção 1</button>
+                <button id="opcao2">Opção 2</button>
+                <button id="opcao3">Opção 3</button>
+            </div>
+        </section>
+    </section>
+
+    <section id="transicao-ano" class="tela">
+        <h2>📊 Balanço do Ano Concluído!</h2>
+        <p>Sua fazenda manteve indicadores estáveis neste período.</p>
+        <div class="bloco-conteudo" style="border-left-color: #2e7d32;">
+            <p>🌾 Produção Atual: <strong id="statusProd">50</strong></p>
+            <p>💰 Economia Atual: <strong id="statusEcon">50</strong></p>
+            <p>🌳 Meio Ambiente Atual: <strong id="statusAmb">50</strong></p>
+            <p>😊 Qualidade de Vida Atual: <strong id="statusQual">50</strong></p>
+        </div>
+        <button id="btnAvancarAno">Avançar para o Próximo Ano ➔</button>
+    </section>
+
+    <section id="fim" class="tela">
+        <h2 id="resultadoTitulo">Resultado Final</h2>
+        <p>Sua jornada terminou.</p>
+        <div class="relatorio">
+            <p>🌾 Produção: <span id="finalProducao"></span></p>
+            <p>💰 Economia: <span id="finalEconomia"></span></p>
+            <p>🌳 Meio Ambiente: <span id="finalAmbiente"></span></p>
+            <p>😊 Qualidade de Vida: <span id="finalQualidade"></span></p>
+        </div>
+        <button onclick="location.reload()">Jogar Novamente</button>
+    </section>
+
+    <audio id="somClique" src="assets/sons/clique.mp3"></audio>
+    <audio id="musicaAmbiente" src="assets/sons/ambiente.mp3" loop></audio>
+    <audio id="somVitoria" src="assets/sons/vitoria.mp3"></audio>
+    <audio id="somDerrota" src="assets/sons/derrota.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

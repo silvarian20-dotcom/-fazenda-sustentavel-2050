@@ -1,0 +1,372 @@
+/* ==========================
+   RESET & VARIÁVEIS
+========================== */
+:root {
+    --tamanho-base: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================
+   BODY (Fundo fixo em todas as telas)
+========================== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--tamanho-base);
+    min-height: 100vh;
+    color: white;
+    padding: 100px 20px 20px 20px;
+    transition: background 0.4s, color 0.4s;
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)), url('fazenda.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
+
+/* ==========================
+   TELAS
+========================== */
+.tela {
+    display: none;
+    max-width: 900px;
+    margin: auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tela.ativa {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================
+   MENU PRINCIPAL & ANIMAÇÃO DO TRATOR
+========================== */
+#menu {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#menu h1 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.trator-animado {
+    display: inline-block;
+    animation: balancoTrator 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes balancoTrator {
+    from { transform: rotate(-5deg) translateY(0); }
+    to { transform: rotate(8deg) translateY(-4px); }
+}
+
+#menu p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+}
+
+.botoes-menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ==========================
+   BOTÕES GERAIS
+========================== */
+button {
+    border: none;
+    cursor: pointer;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+    background: white;
+    color: #2e7d32;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #f5f5f5;
+}
+
+/* ==========================
+   EFEITO DESFOCADO (Blur) PARA TEXTOS
+========================== */
+#tutorial, #aprendizado, #transicao-ano, #fim {
+    background: rgba(0, 0, 0, 0.6) !important; 
+    padding: 35px 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+#tutorial h2, #aprendizado h2, #transicao-ano h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+}
+
+#tutorial p, #aprendizado p, #transicao-ano p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#tutorial ul {
+    margin: 20px 0;
+    padding-left: 25px;
+}
+
+#tutorial li {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.bloco-conteudo {
+    background: rgba(255, 255, 255, 0.1) !important;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 5px solid #4cd137;
+}
+
+.bloco-conteudo h3 {
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+}
+
+/* ==========================
+   BARRA DE ACESSIBILIDADE FIXA
+========================== */
+.acessibilidade-fixa {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.4);
+}
+
+.acessibilidade-fixa button {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* ==========================
+   TELA DE JOGO ATIVO
+========================== */
+header h2 {
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    margin-bottom: 20px;
+}
+
+.painel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.indicador {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 15px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.indicador p {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    display: block;
+}
+
+progress::-webkit-progress-bar { background: #e0e0e0; border-radius: 10px; }
+progress::-webkit-progress-value { background: #4cd137; border-radius: 10px; }
+
+.indicador span {
+    display: block;
+    margin-top: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* MAPA DOS QUADRADOS */
+.fazenda {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.area {
+    min-height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* BLOCO DO EVENTO */
+.evento {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.evento h3 {
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+}
+
+.evento p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.opcoes button {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+}
+
+/* ==========================
+   MODO ESCURO COORDENADO
+========================== */
+.dark-mode {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('fazenda.png') !important;
+}
+
+.dark-mode .indicador,
+.dark-mode .evento,
+.dark-mode .area,
+.dark-mode .bloco-conteudo {
+    background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.dark-mode button {
+    background: #333;
+    color: white;
+}
+
+/* ==========================
+   ALTO CONTRASTE (Regra de acessibilidade)
+========================== */
+.alto-contraste {
+    background-image: none !important;
+    background: black !important;
+    color: yellow !important;
+}
+
+.alto-contraste #tutorial, 
+.alto-contraste #aprendizado, 
+.alto-contraste #transicao-ano,
+.alto-contraste #fim,
+.alto-contraste .indicador,
+.alto-contraste .evento,
+.alto-contraste .area,
+.alto-contraste .bloco-conteudo {
+    background: black !important;
+    border: 2px solid yellow !important;
+    color: yellow !important;
+}
+
+.alto-contraste h1, .alto-contraste h2, .alto-contraste h3, 
+.alto-contraste p, .alto-contraste li, .alto-contraste span {
+    color: yellow !important;
+}
+
+.alto-contraste button {
+    background: yellow !important;
+    color: black !important;
+}
+
+/* ==========================
+   RESPONSIVIDADE (Celular)
+========================== */
+@media (max-width: 768px) {
+    :root {
+        --tamanho-base: 14px; 
+    }
+    
+    body {
+        padding: 90px 12px 20px 12px;
+    }
+
+    #menu h1 {
+        font-size: 2.2rem;
+    }
+
+    .botoes-menu button {
+        width: 100%;
+    }
+
+    .fazenda {
+        grid-template-columns: 1fr; 
+    }
+
+    .acessibilidade-fixa {
+        padding: 8px;
+        gap: 6px;
+    }
+
+    .acessibilidade-fixa button {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+    }
+}
