@@ -1,6 +1,6 @@
 # 🚜 Fazenda Sustentável 2050
 
-> **Projeto desenvolvido para o Programa Agrinho 2026** > **Categoria:** Robótica / Programação / Game Design  
+> **Projeto desenvolvido para o Programa Agrinho 2026** > **Categoria:** Programação
 > **Tema:** Sustentabilidade no Campo e Inovação Agrícola  
 
 ---
@@ -62,6 +62,8 @@ O desenvolvimento priorizou tecnologias nativas, leves e limpas para garantir o 
 ---
 
 ## 📂 Estrutura de Arquivos
+
+```text
 ├── index.html          # Interface principal do jogo e estrutura das telas
 ├── style.css           # Estilização visual, responsividade e acessibilidade
 ├── script.js          # Lógica do jogo, banco de eventos e algoritmos
